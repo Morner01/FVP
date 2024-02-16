@@ -23,3 +23,22 @@ const mas = [
 const ages = mas.filter(person => person.age > 18);
 const filt = ages.map(person => `${person.name} (${person.age} лет)`).join(", ");
 console.log(filt);
+
+//Дан массив продаж в виде объектов: [{product: 'Телефон', price: 50000, quantity: 1}, 
+//{product: 'Чехол', price: 1500, quantity: 2}, 
+//{product: 'Зарядное устройство', price: 2500, quantity: 1}
+//]. 
+//Используя метод reduce, рассчитайте общую стоимость проданных товаров.
+//Пример результата:
+//Общая стоимость продаж: 55500
+const smartphone = [
+  {product: 'Телефон', price: 50000, quantity: 1}, 
+{product: 'Чехол', price: 1500, quantity: 2}, 
+{product: 'Зарядное устройство', price: 2500, quantity: 1},
+];
+
+const price = smartphone.reduce((acc, product) => {
+  acc += product.price * product.quantity;
+  return acc;
+}, 0);
+console.log(price);
